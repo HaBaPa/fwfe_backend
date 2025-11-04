@@ -58,10 +58,10 @@ jobs:
             docker run -d \
               --name fwfe-backend \
               -p 8080:8080 \
-              -e DB_URL="${{ secrets.DB_URL }}" \
-              -e DB_USERNAME="${{ secrets.DB_USERNAME }}" \
-              -e DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
+              -e SPRING_DATASOURCE_URL="${{ secrets.DB_URL }}" \
+              -e SPRING_DATASOURCE_USERNAME="${{ secrets.DB_USERNAME }}" \
+              -e SPRING_DATASOURCE_PASSWORD="${{ secrets.DB_PASSWORD }}" \
               -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
               ${{ secrets.DOCKER_USERNAME }}/fwfe-backend:latest
-            
-            echo "✅ Deploy thành công!"
+              
+              echo "✅ Deploy thành công!"
